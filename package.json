@@ -1,0 +1,11 @@
+{
+  "name": "sawplate",
+  "version": "1.0.0",
+  "description": "Game logic server for Sawtooth",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SD & KB",
+  "license": "ISC"
+}

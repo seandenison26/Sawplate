@@ -4,8 +4,17 @@
   "description": "Game logic server for Sawtooth",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "devStart": "nodemon server"
   },
   "author": "SD & KB",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }

@@ -1,15 +1,24 @@
 'use strict';
 
-var express = require('express');
-var redux = require('redux');
-var reducers = require('./reducers');
-var cors = require('cors');
+var _express = require('express');
 
-var store = redux.createStore(reducers.bigDaddyReduce);
+var _express2 = _interopRequireDefault(_express);
 
-var app = express();
+var _redux = require('redux');
 
-app.use(cors());
+var _reducers = require('./reducers');
+
+var _cors = require('cors');
+
+var _cors2 = _interopRequireDefault(_cors);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var store = (0, _redux.createStore)(_reducers.bigDaddyReduce);
+
+var app = (0, _express2.default)();
+
+app.use((0, _cors2.default)());
 
 app.get('/:action', function (req, res) {
 	store.dispatch({ type: req.params.action });

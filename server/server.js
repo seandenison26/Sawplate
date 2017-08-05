@@ -1,9 +1,9 @@
-const express = require('express')
-const redux = require('redux')
-const reducers = require('./reducers')
-const cors = require('cors')
+import express from 'express'
+import  {createStore} from 'redux'
+import  {bigDaddyReduce} from './reducers'
+import cors from 'cors'
 
-const store = redux.createStore(reducers.bigDaddyReduce)
+const store = createStore(bigDaddyReduce)
 
 const app = express()
 

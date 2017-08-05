@@ -32,3 +32,4 @@ build/PhaserMMORPG.min.js
 
 # VIM .swp 
 *.swp
+*.swo

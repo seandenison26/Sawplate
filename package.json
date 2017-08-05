@@ -5,9 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "devstart": "nodemon server",
-    "lint": "eslint server.js"
+    "start": "node build/server",
+    "devstart": "nodemon build/server",
+    "lint": "eslint server/**",
+    "build": "babel server -d build"
   },
   "author": "SD & KB",
   "license": "ISC",
@@ -18,5 +19,9 @@
     "eslint": "^4.3.0",
     "eslint-plugin-fp": "^2.3.0",
     "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0"
   }
 }

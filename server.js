@@ -22,3 +22,10 @@ app.get('/:action', function (req, res) {
 app.listen(3000, function () {
 	console.log('Example app listening on port 3000!')
 })
+
+const poop = {};
+poop.x = 10;
+
+for(var x;;) {
+
+}

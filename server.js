@@ -12,9 +12,11 @@ const app = express();
 app.use(cors());
 
 app.get('/:action', function (req, res) {
-	store.dispatch({type:"INCREASE_SERVER_CALLS"});
+	store.dispatch({type:req.params.action});
 	console.log(`This is call ${store.getState().serverCalls}!`);
-	res.send(`You pressed the button ${store.getState().serverCalls} times.`)
+	
+	
+	res.json(JSON.stringify({type:"SERVER_TOTAL",serverTotal:store.getState().serverCalls}))
 })
 
 app.listen(3000, function () {

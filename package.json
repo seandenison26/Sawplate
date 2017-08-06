@@ -6,8 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "devstart": "nodemon server",
-    "lint": "eslint server.js"
+    "dev": "concurrently \"npm run build\" \"nodemon build/server\"",
+    "lint": "eslint server.js",
+    "build": "babel server -d build --watch"
+    
   },
   "author": "SD & KB",
   "license": "ISC",

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -9,10 +9,9 @@ function bigDaddyReduce() {
 	var action = arguments[1];
 
 	switch (action.type) {
-		case "INCREASE_SERVER_CALLS":
+		case 'INCREASE_SERVER_CALLS':
 			return Object.assign({}, state, { serverCalls: state.serverCalls + 1 });
-
 		default:
 			return state;
 	}
-};
+}

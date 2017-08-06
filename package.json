@@ -9,7 +9,6 @@
     "dev": "concurrently \"npm run build\" \"nodemon build/server\"",
     "lint": "eslint server.js",
     "build": "babel server -d build --watch"
-    
   },
   "author": "SD & KB",
   "license": "ISC",
@@ -21,5 +20,9 @@
     "eslint-plugin-fp": "^2.3.0",
     "nodemon": "^1.11.0",
     "concurrently": "^3.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0"
   }
 }

@@ -13,6 +13,7 @@
   "author": "SD & KB",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "chai": "^4.1.1",
     "concurrently": "^3.5.0",
     "cors": "^2.8.4",

@@ -1,10 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Express = Express;
-
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -41,10 +36,10 @@ app.use()
 //import express from 'express'
 var app = (0, _express2.default)();
 
-console.log(_http2.default.METHODS);
-
-function Express() {
-  return (0, _express2.default)();
+function get(app, path, callback) {
+  newApp = Object.create(app);
+  newApp.get(path, callback);
+  return newApp;
 }
 
 /*

@@ -22,17 +22,35 @@ app.set()
 app.use()
 */
 
-//import express from 'express'
 import express from 'express'
-import http from 'http'
 
-const app = express()
 
-function get(app,path,callback) {
-	newApp = Object.create(app)
-	newApp.get(path,callback)
-	return newApp;	
+
+export default FunctionalExpressServer = (...funcs) => {
+	const appFuncs = [...funcs]
+
+	const app = express()
+	appFuncs.forEach((func) => app.func()) 
 }
+
+export const use = (depend) => {
+	return () => {this.use(depend)} 
+}
+
+export const get = (path,...callbacks) => (appFuncs) => {
+	const callback = (req,res) = {
+		
+	}
+	
+	return const () => {this.get(path,callback)};	
+}
+
+
+
+
+
+
+
 
 
 /*

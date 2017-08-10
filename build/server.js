@@ -16,6 +16,10 @@ var _bodyParser = require('body-parser');
 
 var _bodyParser2 = _interopRequireDefault(_bodyParser);
 
+var _clone = require('clone');
+
+var _clone2 = _interopRequireDefault(_clone);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import FunctionalExpressServer from './ExpressWrapper'
@@ -34,7 +38,12 @@ app.get('/callServer', function (req, res) {
 	res.json(JSON.stringify({ type: 'SERVER_TOTAL', serverTotal: store.getState().serverCalls }));
 });
 
-app.listen(3000);
+var server = (0, _clone2.default)(app);
+server.locals.name = "server";
+
+console.log(app.locals.name);
+
+server.listen(3000, function () {});
 
 /*
 return await FunctionalExpressServer(

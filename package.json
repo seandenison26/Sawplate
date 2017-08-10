@@ -7,7 +7,7 @@
     "test": "mocha",
     "start": "node server",
     "dev": "concurrently \"npm run build\" \"nodemon build/server\"",
-    "lint": "eslint server.js",
+    "lint": "eslint server",
     "build": "babel server -d build --watch"
   },
   "author": "SD & KB",

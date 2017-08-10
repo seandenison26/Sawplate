@@ -1,10 +1,14 @@
 const assert = require('chai').assert
-const wrapper = require('../build/ExpressWrapper')
+const ExpWrapper = require('../build/ExpressWrapper')
 const express = require('express')
 
-describe('wrapper.Express()', function() {
-	it('returns a new instance of the express app object', function() {
-		assert.equal(wrapper.Express(), express())
+const testApp = express()
+
+console.log(express().toString() === ExpWrapper.toString());
+
+describe('ExpressWrapper', function() {
+	it('creates a new instance of the express app()', function() {
+		assert.equal(ExpWrapper.getApp().toString, testApp.toString())
 	})
 }) 
 

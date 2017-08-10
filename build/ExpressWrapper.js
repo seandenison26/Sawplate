@@ -1,5 +1,11 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getApp = getApp;
+exports.get = get;
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -34,10 +40,14 @@ app.use()
 */
 
 //import express from 'express'
-var app = (0, _express2.default)();
+var testApp = (0, _express2.default)();
+
+function getApp() {
+  return (0, _express2.default)();
+}
 
 function get(app, path, callback) {
-  newApp = Object.create(app);
+  newApp = app.bind({});
   newApp.get(path, callback);
   return newApp;
 }

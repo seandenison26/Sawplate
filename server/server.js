@@ -3,7 +3,6 @@ import  {createStore} from 'redux'
 import  {bigDaddyReduce} from './reducers'
 import cors from 'cors'
 import bodyParser from 'body-parser'
-import clone from 'clone'
 //import FunctionalExpressServer from './ExpressWrapper'
 
 
@@ -20,12 +19,7 @@ app.get('/callServer', function (req, res) {
 	res.json(JSON.stringify({type:'SERVER_TOTAL',serverTotal:store.getState().serverCalls}))
 })
 
-const server = clone(app)
-server.locals.name = "server"
-
-console.log(app.locals.name)
-
-server.listen(3000, ()=>{})
+app.listen(3000, ()=>{})
 
 
 /*

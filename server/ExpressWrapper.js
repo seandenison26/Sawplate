@@ -1,4 +1,4 @@
-
+/* eslint-disable no-nil, no-unused-expression */ 
 //Potential additions
 
 /*
@@ -23,26 +23,39 @@ app.use()
 */
 
 import express from 'express'
+import  {createStore} from 'redux'
+import  {bigDaddyReduce} from './reducers'
+import {resObjChange, increaseServerCalls} from './middleware'
 
-
-
-export default FunctionalExpressServer = (...funcs) => {
+const FunctionalExpressServer = (...funcs) => {
 	const appFuncs = [...funcs]
-
+	const store = createStore(bigDaddyReduce);
 	const app = express()
-	appFuncs.forEach((func) => app.func()) 
+	appFuncs.forEach((func) => {func.apply(app)}) 
+
+	return app.listen(3000, () => {})
 }
+
+export default FunctionalExpressServer
 
 export const use = (depend) => {
 	return () => {this.use(depend)} 
 }
 
-export const get = (path,...callbacks) => (appFuncs) => {
-	const callback = (req,res) = {
-		
+export const get = (path,...middlewares) => (appFuncs) => {
+	const callback = (req,res) => {
+		var resObj = {req, status: 1}, length = middlewares.length, ware = 0
+	       	while(ware < length) {
+			if(resObj.status !== 1) {
+				break()
+			}
+			else {
+				resObj = resObjChange(middleware[ware], resObj)
+			}	
+		}	
+		res.json({resObj})
 	}
-	
-	return const () => {this.get(path,callback)};	
+	return () => {this.get(path,callback)};	
 }
 
 
